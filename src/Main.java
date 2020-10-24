@@ -2,11 +2,15 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int b = in.nextInt();
         int n = in.nextInt();
-        int ans;
-        ans = ((a * 100 + b) * n);
-        System.out.println((ans - ans % 100) / 100 + " " +ans % 100);
+        int h;
+        int m;
+        int s;
+
+        h=(n/3600)%24;
+        m=(n%3600)/60;
+        s=(n%3600)%60;
+
+        System.out.printf("%d:%02d:%02d", h, m, s);
     }
 }
