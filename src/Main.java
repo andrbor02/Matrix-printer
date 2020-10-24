@@ -1,5 +1,9 @@
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello wolrd");
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        int b = in.nextInt();
+        System.out.println("Результат сложения: " + (a + b));
     }
 }
