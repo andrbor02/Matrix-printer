@@ -7,7 +7,7 @@ public class Main {
         do{
             N /= 2;
             c++;
-        }while(N >= 1);
+        }while(N > 1);
         System.out.println(c);
     }
 }
