@@ -5,9 +5,8 @@ public class Main {
         int x = in.nextInt();
         int n = in.nextInt();
 
-        x = x | (1 << n);
+        x = x ^ (1 << n);
 
         System.out.println(x);
-
     }
 }
