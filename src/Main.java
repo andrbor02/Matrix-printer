@@ -1,22 +1,19 @@
-import java.text.DecimalFormat;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        double A = in.nextDouble();
-        double B = in.nextDouble();
+        int i, count, remainder = 0, numb = 0;
+        int a = in.nextInt();
+        count = (int) (Math.log10(a) + 1);
+        for(i = 0; i < count; i++){
+            numb = (int) ((a % (int)(Math.pow(10, (i + 1))) - numb) / Math.pow(10, i));
+            remainder += Math.pow(numb, count);
+        }
 
-        double bap = B / A;
-        double bam = -B / A;
-
-        if(A <= 0 && B <= 0)
-            System.out.println("no such x");
-        else if (A >= 0 && B > 0 || A > 0 && B == 0)
-            System.out.println("any x");
-        else if (A > 0 && B < 0)
-            System.out.printf("x<%.1f or x>%.1f", bap, bam);
+        if (remainder == a)
+            System.out.println("it's Armstrong's number");
         else
-            System.out.printf("%.1f<x<%.1f", bap, bam);
+            System.out.println("it isn't Armstrong's number");
     }
 }
