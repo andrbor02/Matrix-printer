@@ -9,7 +9,7 @@ public class Main {
         double x = in.nextDouble();
         double y = in.nextDouble();
 
-        if ((x <= 0 && y > x && y < 2 - x * x) || (x > 0 && y >= 0 && y < 2 - x * x))
+        if ((y < 0 && y > x * x - 2) || (y >= 0 && y < Math.abs(x) && y > x * x - 2))
             System.out.println("YES");
         else
             System.out.println("NO");
