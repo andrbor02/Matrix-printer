@@ -6,13 +6,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         in.useLocale(US);
-        double x = in.nextDouble();
-        double y = in.nextDouble();
+        int x = in.nextInt();
 
-        if ((x <= 0 && x * x + y * y < 1) || (x > 0 && y < 0 && x * x + y * y < 1) || (x > 0 && y > 0 && x < 1 && y < 1)) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
+        if (x >= 0 && (int)Math.log10(x) == 0 || x == 0)
+            System.out.println("DIGIT");
+        else if (x >= 0 && (int)Math.log10(x) == 1)
+            System.out.println("NUM");
+        else
+            System.out.println("OTHER");
     }
 }
