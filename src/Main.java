@@ -9,9 +9,10 @@ public class Main {
         double x = in.nextDouble();
         double y = in.nextDouble();
 
-        if ((y < 0 && y > x * x - 2) || (y >= 0 && y < Math.abs(x) && y > x * x - 2))
+        if ((x < 0 && x * x + y * y < 1) || (x >= 0 && x * x + y * y < 1 && y > x)) {
             System.out.println("YES");
-        else
+        } else {
             System.out.println("NO");
+        }
     }
 }
