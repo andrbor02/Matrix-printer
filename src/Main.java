@@ -8,7 +8,7 @@ public class Main {
         in.useLocale(US);
         double x = in.nextDouble();
         boolean e = false;
-        if (x >= 3 && x <= 8)
+        if (x >= -3 && x <= 5 || x >= 9 && x <= 15)
             e = true;
         System.out.println(e);
     }
