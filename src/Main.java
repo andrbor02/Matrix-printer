@@ -9,7 +9,7 @@ public class Main {
         double x = in.nextDouble();
         double y = in.nextDouble();
 
-        if ((x < 0 && x * x + y * y < 1 && (y < x || y > -x)) || (x >= 0 && x * x + y * y < 1)) {
+        if (y > 1 - x && ((x <= 0 && y > 2 * x * x) || (x > 0 && x < 1))) {
             System.out.println("YES");
         } else {
             System.out.println("NO");
