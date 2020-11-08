@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.*;
 
 import static java.util.Locale.US;
@@ -8,14 +6,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         in.useLocale(US);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        boolean flag = false;
+        double x = in.nextDouble();
+        double y = in.nextDouble();
 
-        if (a % 2 == 0 && b % 2 == 0 || a % 2 == 0 && c % 2 == 0 || b % 2 == 0 && c % 2 == 0)
-            flag = true;
-
-        System.out.println(flag);
+        if (y < x && x < 2 && x * x + y * y > 4 && y > 0)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
     }
 }
