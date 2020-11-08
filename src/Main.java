@@ -9,7 +9,7 @@ public class Main {
         double x = in.nextDouble();
         double y = in.nextDouble();
 
-        if (y < x && x < 2 && x * x + y * y > 4 && y > 0)
+        if (y > 0 && y < 0.5 && y < Math.sin(x) && x > 0 && x < 3.14)
             System.out.println("YES");
         else
             System.out.println("NO");
