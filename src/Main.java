@@ -11,10 +11,9 @@ public class Main {
         int a = in.nextInt();
         int b = in.nextInt();
         int c = in.nextInt();
-        int d = in.nextInt();
         boolean flag = false;
 
-        if (a + b == 0 || a + c == 0 || a + d == 0 || b + c == 0 || b + d == 0 || c + d == 0)
+        if (a % 2 == 0 && b % 2 == 0 || a % 2 == 0 && c % 2 == 0 || b % 2 == 0 && c % 2 == 0)
             flag = true;
 
         System.out.println(flag);
