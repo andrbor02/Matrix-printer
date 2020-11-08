@@ -7,9 +7,9 @@ public class Main {
         Scanner in = new Scanner(System.in);
         in.useLocale(US);
         double x = in.nextDouble();
-        boolean e = false;
-        if (x >= -3 && x <= 5 || x >= 9 && x <= 15)
-            e = true;
+        boolean e = true;
+        if (x >= -2 && x <= 3 || x >= 6 && x <= 9)
+            e = false;
         System.out.println(e);
     }
 }
