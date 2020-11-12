@@ -3,17 +3,23 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int i, count, remainder = 0, numb = 0;
         int a = in.nextInt();
-        count = (int) (Math.log10(a) + 1);
-        for(i = 0; i < count; i++){
-            numb = (int) ((a % (int)(Math.pow(10, (i + 1))) - numb) / Math.pow(10, i));
-            remainder += Math.pow(numb, count);
+        if(a > 12 || a <= 0)
+            System.out.println("0");
+        else{
+        switch (a) {
+            case 2:
+                System.out.println("28");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                System.out.println("30");
+                break;
+            default:
+                System.out.println("31");
         }
-
-        if (remainder == a)
-            System.out.println("it's Armstrong's number");
-        else
-            System.out.println("it isn't Armstrong's number");
+        }
     }
 }
