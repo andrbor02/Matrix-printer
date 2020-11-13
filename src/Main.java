@@ -4,11 +4,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int A = in.nextInt();
-        int sum = 0;
-        while(A != 1){
-            A /= 2;
-            sum++;
+        int sum = 0, i = 25;
+        while(i < A){
+            if(i % 2 == 0)
+                sum += i;
+            i++;
         }
-        System.out.println(sum + 1);
+        System.out.println(sum);
     }
 }
