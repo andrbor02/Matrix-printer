@@ -6,10 +6,11 @@ public class Main {
         int sum = 0;
         while(true){
             int a = in.nextInt();
-            if(a > 10)
-            sum += a;
-            if(a % 5 == 0)
+
+            if((int)Math.log10(a) != 1)
                 break;
+
+            sum += a % 10 + a / 10;
         }
         System.out.println(sum);
     }
