@@ -4,13 +4,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int A = in.nextInt();
-        int i = 0, numb = 0, min = 9;
-        while(i < Math.log10(A)){
-            numb = (int) ((A % (int)(Math.pow(10, (i + 1))) - numb) / Math.pow(10, i));
-            if(numb < min && numb != 0)
-               min = numb;
-            i++;
-        }
-        System.out.println(min);
+        int i;
+        boolean flag;
+
+        A += 1;
+
+        do{
+            i = 2;
+            flag = true;
+            while (i < A && flag) {
+                if ((A % i) == 0) {
+                    flag = false;
+                    continue;
+                }
+                i++;
+            }
+            A++;
+        }while (!flag);
+        System.out.println(A - 1);
     }
 }
