@@ -2,20 +2,19 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int A = in.nextInt();
-        int i = 2;
-        boolean flag = true;
+        double a = in.nextDouble();
+        int n = in.nextInt();
+        double ans = a, i = 1;
 
-        while (i < A && flag) {
-            if ((A % i) == 0) {
-                flag = false;
-                continue;
-            }
+        while (i < n / 2) {
+            ans = ans * a;
             i++;
         }
-        if(flag)
-            System.out.println("prime");
-        else
-            System.out.println("composite");
+        ans = ans * ans;
+
+        if(n % 2 != 0)
+            ans = ans * a;
+
+        System.out.println((int)ans);
     }
 }
