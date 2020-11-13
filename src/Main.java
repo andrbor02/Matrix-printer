@@ -1,26 +1,20 @@
 import java.util.*;
-
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int A = in.nextInt();
-        int i;
-        boolean flag;
-
-        A += 1;
-
-        do{
-            i = 2;
-            flag = true;
-            while (i < A && flag) {
-                if ((A % i) == 0) {
-                    flag = false;
-                    continue;
-                }
-                i++;
+        int number_of_bridges = in.nextInt();
+        int t = 0, i = 1;
+        
+        while(i <= number_of_bridges){
+            t = in.nextInt();
+            if (t <= 437){
+                System.out.println("Crash " + i);
+                break;
             }
-            A++;
-        }while (!flag);
-        System.out.println(A - 1);
+            i++;
+        }
+        if (t > 437){
+            System.out.println("No crash");
+        }
     }
 }
