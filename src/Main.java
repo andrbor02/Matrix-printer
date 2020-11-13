@@ -3,15 +3,13 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        int A = in.nextInt();
+        int B = in.nextInt();
         int sum = 0;
-        while(true){
-            int a = in.nextInt();
-
-            if((int)Math.log10(a) != 1)
-                break;
-
-            sum += a % 10 + a / 10;
+        while(A >= B){
+            A -= B;
+            sum++;
         }
-        System.out.println(sum);
+        System.out.println(sum + " " + A);
     }
 }
