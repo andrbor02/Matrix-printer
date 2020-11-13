@@ -2,21 +2,13 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        int d = in.nextInt();
-        int i = 10000;
-        boolean flag = true;
-
-        while(i < 99999){
-            if(i % a == b && i % c == d) {
-                System.out.print(i + " ");
-                flag = false;
-            }
+        int A = in.nextInt();
+        int i = 0, numb = 0, sum = 0;
+        while(i < Math.log10(A)){
+            numb = (int) ((A % (int)(Math.pow(10, (i + 1))) - numb) / Math.pow(10, i));
+            sum += numb;
             i++;
         }
-        if(flag)
-            System.out.println("-1");
+        System.out.println(sum);
     }
 }
