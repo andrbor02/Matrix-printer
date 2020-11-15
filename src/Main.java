@@ -2,19 +2,24 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        double a = in.nextDouble();
         int n = in.nextInt();
-        double ans = a, i = 1;
+        int[] a = new int[n];
+        boolean flag = true;
 
-        while (i < n / 2) {
-            ans = ans * a;
-            i++;
+        for(int i = 0; i < n; i++)
+            a[i] = in.nextInt();
+
+        int numb = in.nextInt();
+
+        for(int y = 0; y < n; y++) {
+            if (a[y] == numb) {
+                System.out.println(y + 1);
+                flag = false;
+                break;
+            }
         }
-        ans = ans * ans;
+        if(flag)
+            System.out.println("NO");
 
-        if(n % 2 != 0)
-            ans = ans * a;
-
-        System.out.println((int)ans);
     }
 }
