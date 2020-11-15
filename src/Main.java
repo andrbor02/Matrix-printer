@@ -8,17 +8,27 @@ public class Main {
         for(int y = 0; y < n; y++)
             a[y] = in.nextInt();
 
-        int k = n;
+        int[] list = new int[n];
 
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < k - 1; j++) {
-                    int b = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = b;
+        int i, j, count, maxcount, num, len;
+
+        len = 0; maxcount = 1; num = 0;
+        for (i = 0; i < n; i++) {
+            count=0;
+            for (j = i; j < n; j++)
+                if (a[i] == a[j])
+                    count++;
+            if (count == maxcount) {
+                list[len] = i;
+                len++;
             }
-            k--;
+            if (count > maxcount) {
+                maxcount = count;
+                num = i;
+                len = 1;
+                list[0] = i;
+            }
         }
-        for(int y = 0; y < n; y++)
-            System.out.print(a[y] + " ");
+            System.out.print(a[list[0]]);
     }
 }
