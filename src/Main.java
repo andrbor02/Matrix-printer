@@ -3,27 +3,37 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        int[] a = new int[n];
+        int[][] a = new int[n][n];
+        int[][] b = new int[n][n];
+        int t = 1;
 
-        for(int i = 0; i < n - 1; i++)
-            a[i] = in.nextInt();
-
-        for(int x = 0; x < n - 1; x++){
-            for(int y = 0; y < n - 2; y++){
-                if(a[y + 1] < a[y]){
-                    int b = a[y];
-                    a[y] = a[y + 1];
-                    a[y + 1] = b;
-                }
-
+        for(int x = 0; x < n; x++){
+            for(int y = 0; y < n; y++){
+                a[x][y] = t;
+                b[y][x] = t;
+                t++;
             }
         }
 
-        for(int t = 0; t < n; t++){
-            if(a[t] != t + 1) {
-                System.out.print(t + 1);
-                break;
+//        for(int x = 0; x < n; x++){
+//            for(int y = 0; y < n; y++){
+//                System.out.printf("%3d",a[x][y]);
+//            }
+//            System.out.print("\n");
+//        }
+//        for(int x = 0; x < n; x++){
+//            for(int y = 0; y < n; y++){
+//                System.out.printf("%3d",b[x][y]);
+//            }
+//            System.out.print("\n");
+//        }
+
+        for(int x = 0; x < n; x++){
+            for(int y = 0; y < n; y++){
+                if(a[x][y] == b[x][y])
+                    System.out.print(a[x][y] + " ");
             }
         }
+
     }
 }
