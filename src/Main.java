@@ -4,15 +4,16 @@ public class Main {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
         int[] a = new int[N];
-        int count = 0;
 
         for(int i = 0; i < N; i++)
             a[i] = in.nextInt();
 
+        int Max = a[0];
+
         for(int i = 1; i < N; i += 1) {
-            if (a[i] > a[i - 1])
-                count++;
+            if (a[i] > Max)
+                Max = a[i];
         }
-        System.out.print(count);
+        System.out.print(Max);
     }
 }
