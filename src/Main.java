@@ -8,7 +8,9 @@ public class Main {
         for(int i = 0; i < N; i++)
             a[i] = in.nextInt();
 
-        for(int i = 0; i < N; i += 2)
-            System.out.print(a[i] + " ");
+        for(int i = 0; i < N; i += 1) {
+            if (a[i] % 2 == 0)
+                System.out.print(a[i] + " ");
+        }
     }
 }
