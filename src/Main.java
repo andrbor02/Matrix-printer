@@ -3,24 +3,20 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int X = in.nextInt();
+        double X = in.nextDouble();
+        int N = in.nextInt();
 
-        System.out.println(sum_of_digits(X));
+        f(X, N);
     }
 
-    public static int sum_of_digits(int X) {
-        int sum_all = 0, numb = 0, sum = 0;
+    public static void f(double a, int b) {
 
-        for(int p = 100; p < X; p++) {
-            sum = 0;
-            numb = 0;
-            for (int i = 0; i < Math.log10(p) + 1; i++) {
-                numb = (int) ((p % (int) (Math.pow(10, (i + 1))) - numb) / Math.pow(10, i));
-                sum += numb;
-            }
-            if(sum % 13 == 0)
-                sum_all++;
+        for(int p = 1; p < b + 1; p++) {
+            a *= 2;
+            System.out.print((int)a);
+
+            if(a >= 1)
+                a--;
         }
-        return sum_all;
     }
 }
