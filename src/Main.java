@@ -3,24 +3,22 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int ax = in.nextInt();
-        int ay = in.nextInt();
-        int bx = in.nextInt();
-        int by = in.nextInt();
-        int cx = in.nextInt();
-        int cy = in.nextInt();
+        int A = in.nextInt();
+        int B = in.nextInt();
+        int C = in.nextInt();
+        int D = in.nextInt();
 
-        System.out.printf("%.10f", P(ax, ay, bx, by, cx, cy));
+        System.out.println(min(A, B, C, D));
     }
 
-    static double P (int ax, int ay, int bx, int by, int cx, int cy) {
-        double d1, d2, d3;
-
-        d1 = Math.sqrt(Math.pow(ax - bx, 2) + Math.pow(ay - by, 2));
-        d2 = Math.sqrt(Math.pow(bx - cx, 2) + Math.pow(by - cy, 2));
-        d3 = Math.sqrt(Math.pow(cx - ax, 2) + Math.pow(cy - ay, 2));
-
-        double P = d1 + d2 + d3;
-        return P;
+    static int min (int a, int b, int c, int d) {
+        int Min = a;
+        if(b < Min)
+            Min = b;
+        if(c < Min)
+            Min = c;
+        if(d < Min)
+            Min = d;
+        return Min;
     }
 }
