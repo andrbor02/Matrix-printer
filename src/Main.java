@@ -4,31 +4,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
-        int M = in.nextInt();
 
-        int[][] a = new int[N][M];
-        int[][] b = new int[M][N];
+        int[][] a = new int[N][N];
 
         for(int x = 0; x < N; x++){
-            for(int y = 0; y < M; y++){
-                a[x][y] = in.nextInt();
+            for(int y = 0; y < N; y++){
+                if (x + y == N - 1)
+                    a[x][y] = 1;
+                if (x + y > N - 1)
+                    a[x][y] = 2;
+                if (x + y < N - 1)
+                    a[x][y] = 0;
             }
         }
 
-        int copy_N;
-        for(int x = 0; x < M; x++){
-            copy_N = N;
+        for(int x = 0; x < N; x++){
             for(int y = 0; y < N; y++){
-                b[x][y] = a[copy_N - 1][x];
-                if(copy_N > 1)
-                    copy_N--;
-            }
-        }
-        
-        System.out.println(M + " " + N);
-        for(int x = 0; x < M; x++){
-            for(int y = 0; y < N; y++){
-                System.out.print(b[x][y] + " ");
+                System.out.print(a[x][y] + " ");
             }
             System.out.print("\n");
         }
