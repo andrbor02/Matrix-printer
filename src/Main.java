@@ -4,25 +4,29 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
+        boolean flag = true;
 
         int[][] a = new int[N][N];
 
         for(int x = 0; x < N; x++){
             for(int y = 0; y < N; y++){
-                if (x + y == N - 1)
-                    a[x][y] = 1;
-                if (x + y > N - 1)
-                    a[x][y] = 2;
-                if (x + y < N - 1)
-                    a[x][y] = 0;
+                a[x][y] = in.nextInt();
             }
         }
 
-        for(int x = 0; x < N; x++){
-            for(int y = 0; y < N; y++){
-                System.out.print(a[x][y] + " ");
+        for(int x = 0; x < N; x++) {
+            for (int y = 0; y < N; y++) {
+                if (x > y)
+                    if(a[x][y] != a[y][x])
+                        flag = false;
+                if (x < y)
+                    if(a[x][y] != a[y][x])
+                        flag = true;
             }
-            System.out.print("\n");
         }
+        if(flag)
+            System.out.println("yes");
+        else
+            System.out.println("no");
     }
 }
