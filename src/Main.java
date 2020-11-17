@@ -1,18 +1,20 @@
 import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
-        int[] a = new int[N];
-        int count = 1;
+        int n = in.nextInt();
 
-        for(int i = 0; i < N; i++)
-            a[i] = in.nextInt();
+        System.out.println(sum_of_digits(n));
+    }
 
-        for(int i = 0; i < N - 1; i++) {
-            if (a[i] != a[i + 1])
-                count++;
+    public static int sum_of_digits(int a) {
+        int sum = 0, numb = 0;
+
+        for (int i = 0; i < Math.log10(a) + 1; i++) {
+            numb = (int) ((a % (int) (Math.pow(10, (i + 1))) - numb) / Math.pow(10, i));
+            sum += numb;
         }
-        System.out.print(count);
+        return sum;
     }
 }
