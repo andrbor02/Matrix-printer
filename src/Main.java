@@ -3,30 +3,21 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
-        boolean flag = true;
+        int n = in.nextInt();
+        int m = in.nextInt();
 
-        int[][] a = new int[N][N];
+        int[][] a = new int[n][m];
 
-        for(int x = 0; x < N; x++){
-            for(int y = 0; y < N; y++){
-                a[x][y] = in.nextInt();
+        for(int x = 0; x < n; x++){
+            for(int y = 0; y < m; y++){
+                a[x][y] = x * y;
             }
         }
-
-        for(int x = 0; x < N; x++) {
-            for (int y = 0; y < N; y++) {
-                if (x > y)
-                    if(a[x][y] != a[y][x])
-                        flag = false;
-                if (x < y)
-                    if(a[x][y] != a[y][x])
-                        flag = true;
+        for(int x = 0; x < n; x++){
+            for(int y = 0; y < m; y++){
+                System.out.printf("%4d", a[x][y]);
             }
+            System.out.println();
         }
-        if(flag)
-            System.out.println("yes");
-        else
-            System.out.println("no");
     }
 }
