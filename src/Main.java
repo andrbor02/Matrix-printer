@@ -8,9 +8,19 @@ public class Main {
 
         int[][] a = new int[n][m];
 
+        int i = 0;
         for(int x = 0; x < n; x++){
-            for(int y = 0; y < m; y++){
-                a[x][y] = x * y;
+            if(x % 2 == 0) {
+                for (int y = 0; y < m; y++) {
+                    a[x][y] = i;
+                    i++;
+                }
+            }
+            else {
+                for (int y = m - 1; y >= 0; y--) {
+                    a[x][y] = i;
+                    i++;
+                }
             }
         }
         for(int x = 0; x < n; x++){
