@@ -1,2 +1,1 @@
-Hello wolrd
-Fill and print matrix
+Hello wolrd. Programm to fill and print matrix.
